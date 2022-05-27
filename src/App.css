@@ -1,38 +1,186 @@
-.App {
+.wrapper{
+  width: 300px;
+  height:400px;
+  background-color: #222831;
+  border:1px solid #62DAFB;
+  border-radius: 10px;
+  box-shadow:  0 0 10px 5px rgba(0,10,10,0.5);
+  overflow:hidden;
+}
+
+.wrapper_header,
+h1{
+  width: 100%;
   text-align: center;
+  color: rgb(166, 173, 177);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper_header{
+  padding-top: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form,
+.inputs{
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content:center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.form{
+  height: 100px;
+  flex-flow: column;
+  position:relative;
+}
+.inputs{
+  height: 100%;
+  padding:0 20px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.input{
+  flex-grow: 1;
+  padding:10px 10px;
+  border-radius: 50px;
+  border:1px solid #62DAFB;
+  background:none;
+  color:rgb(166, 173, 177);
+}
+.input:hover{
+  background-color: rgb(37, 43, 56);
+}
+.input:focus{
+  border:1px solid #62DAFB;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn{
+  width: 35px;
+  height: 35px;
+  border-radius:100px;
+  font-size: 1rem;
+  color: #62DAFB;
+  background:none;
+  cursor: pointer;
+  outline: none;
+  border:1px solid #62DAFB;
+  font-weight: bold;
+  text-align: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-left: 5px;  
+}
+.btn:hover{
+  background-color: rgb(37, 43, 56);
+}
+.error,
+.success{
+  position:absolute;
+  bottom:-10px;
+  width: 80%;
+  border:1px solid;
+  padding:5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size:.9rem;
+  border-radius: 5px;
+  margin:0 auto;
+  z-index: 100;
+  background-color: #222831;
+
+}
+.error{
+  border-color: #ff0004;
+}
+.error,
+.alert-error{
+  color: #ff0004;
+}
+.success{
+  border-color: green;
+}
+.success,
+.alert-success{
+  color: green;
+}
+.alert-error,
+.alert-success{
+  cursor: pointer;
+  margin-right:10px;
+}
+.todo_list{
+  width:100%;
+  height: 240px;
+  padding:15px 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.todo_list::-webkit-scrollbar{
+  width: 5px;
+}
+.todo_list::-webkit-scrollbar-track {
+  background: #222831;
+}
+
+.todo_list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+
+.todo_item{
+  display: flex;
+  width: 100%;
+  height:50px;
+  align-items: center;
+  border-bottom: 1px solid rgb(166, 173, 177);
+}
+.todo_item:hover{
+  opacity: 0.9;
+}
+
+.todo_item > span:first-child{
+  width: 30px;
+  height: 30px;
+  border:1px solid #62DAFB;
+  border-radius: 100%;
+  text-align: center;
+  font-weight: bold;
+  line-height:30px;
+  color: rgb(166, 173, 177);
+
+}
+
+.todo_item > span:nth-child(2){
+  flex-grow: 1;
+  padding:0 10px;
+  color: rgb(166, 173, 177);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.todo_item > span:last-child button{
+  background:none;
+  border:none;
+  outline: none;
+  box-shadow: none;
+  font-size:1.2rem;
+  font-weight: bold;
+  cursor:pointer;
+  margin: 0 5px;
+  text-align:center;  
+}
+
+.edit_btn{
+  color: green;
+}
+
+.delete_btn{
+  color: red;
+}
+
+@media screen  and (max-width:768px){
+    .wrapper{
+      width: 100%;
+    }
 }
